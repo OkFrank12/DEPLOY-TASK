@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const DoneController_1 = require("../Controller/DoneController");
+const router = (0, express_1.Router)();
+router.route("/").get(DoneController_1.defaultDone);
+router.route("/read").get(DoneController_1.getDone);
+router.route("/create").post(DoneController_1.createDone);
+router.route("/:id").get(DoneController_1.getOneDone).patch(DoneController_1.updateDone).delete(DoneController_1.deleteDone);
+exports.default = router;
