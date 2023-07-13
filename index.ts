@@ -9,7 +9,7 @@ const port: number = realPort;
 
 const app: Application = express();
 
-const server = app.listen(port, () => {
+const server = app.listen(process.env.APPLICATION_PORT || port, () => {
   mainApp(app);
   dbConnect();
   console.log("");
