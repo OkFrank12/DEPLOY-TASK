@@ -11,7 +11,7 @@ dotenv_1.default.config();
 const realPort = parseInt(process.env.APPLICATION_PORT);
 const port = realPort;
 const app = (0, express_1.default)();
-const server = app.listen(port, () => {
+const server = app.listen(process.env.APPLICATION_PORT || port, () => {
     (0, mainApp_1.mainApp)(app);
     (0, db_1.dbConnect)();
     console.log("");
